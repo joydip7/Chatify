@@ -14,7 +14,7 @@ router.get("/test", arcjetProtection, (req, res) => {
   res.status(200).json({ message: "Test route" });
 });
 
-router.use(arcjetProtection);
+// router.use(arcjetProtection);
 
 router.post("/signup", signup);
 router.post("/login", login);
