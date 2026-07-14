@@ -2,7 +2,7 @@
   "name": "chatify-app",
   "version": "1.0.0",
   "main": "index.js",
-  "engines":{
+  "engines": {
     "node": ">=20.0.0"
   },
   "scripts": {
@@ -12,5 +12,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.6"
+  }
 }
