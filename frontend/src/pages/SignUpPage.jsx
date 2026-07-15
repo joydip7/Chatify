@@ -8,7 +8,7 @@ import {
   UserIcon,
   LoaderIcon,
 } from "lucide-react";
-import {Link} from "react-router";
+import { Link } from "react-router";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +16,7 @@ const SignUpPage = () => {
     email: "",
     password: "",
   });
-  const {signUp, isSigningUp} = useAuthStore();
+  const { signUp, isSigningUp } = useAuthStore();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,63 +43,67 @@ const SignUpPage = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/*FULL NAME */}
                   <div>
-                  <label className="auth-input-label">Full Name</label>
-                  <div className="relative">
-                    <UserIcon className="auth-input-icon" />
+                    <label className="auth-input-label">Full Name</label>
+                    <div className="relative">
+                      <UserIcon className="auth-input-icon" />
 
-                    <input
-                      type="text"
-                      value={formData.fullName}
-                      onChange={(e) =>
-                        setFormData({ ...formData, fullName: e.target.value })
-                      }
-                      className="input"
-                      placeholder="John Doe"
-                    />
+                      <input
+                        type="text"
+                        value={formData.fullName}
+                        onChange={(e) =>
+                          setFormData({ ...formData, fullName: e.target.value })
+                        }
+                        className="input"
+                        placeholder="John Doe"
+                      />
+                    </div>
                   </div>
-                </div>
-                {/*EMAIL INPUT */}
-                <div>
-                  <label className="auth-input-label">Email</label>
-                  <div className="relative">
-                    <MailIcon className="auth-input-icon" />
+                  {/*EMAIL INPUT */}
+                  <div>
+                    <label className="auth-input-label">Email</label>
+                    <div className="relative">
+                      <MailIcon className="auth-input-icon" />
 
-                    <input
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      className="input"
-                      placeholder="johndoe@gmail.com"
-                    />
+                      <input
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
+                        className="input"
+                        placeholder="johndoe@gmail.com"
+                      />
+                    </div>
                   </div>
-                </div>
-                {/*PASSWORD INPUT */}
-                <div>
-                  <label className="auth-input-label">Password</label>
-                  <div className="relative">
-                    <LockIcon className="auth-input-icon" />
+                  {/*PASSWORD INPUT */}
+                  <div>
+                    <label className="auth-input-label">Password</label>
+                    <div className="relative">
+                      <LockIcon className="auth-input-icon" />
 
-                    <input
-                      type="password"
-                      value={formData.password}
-                      onChange={(e) =>
-                        setFormData({ ...formData, password: e.target.value })
-                      }
-                      className="input"
-                      placeholder="Enter your password"
-                    />
+                      <input
+                        type="password"
+                        value={formData.password}
+                        onChange={(e) =>
+                          setFormData({ ...formData, password: e.target.value })
+                        }
+                        className="input"
+                        placeholder="Enter your password"
+                      />
+                    </div>
                   </div>
-                </div>
-                {/*SUBMIT BUTTON */}
-                <button className="auth-btn" type="submit" disabled={isSigningUp}>
-                  {isSigningUp ? (
+                  {/*SUBMIT BUTTON */}
+                  <button
+                    className="auth-btn"
+                    type="submit"
+                    disabled={isSigningUp}
+                  >
+                    {isSigningUp ? (
                       <LoaderIcon className="w-full h-5 animate-spin text-center" />
                     ) : (
                       "Create Account"
                     )}
-                </button>
+                  </button>
                 </form>
                 <div className="mt-6 text-center">
                   <Link to="/login" className="auth-link">
@@ -109,19 +113,20 @@ const SignUpPage = () => {
               </div>
             </div>
 
-
             {/*RIGHT SIDE */}
             <div className="hidden md:w-1/2 md:flex items-center justify-center p-6 bg-gradient-to-bl from-slate-800/20 to-transparent">
-                    <div>
+              <div>
                 <img
                   src="/signup.png"
                   alt="People using mobile devices"
                   className="w-full h-auto object-contain"
                 />
                 <div className="mt-6 text-center">
-                  <h3 className="text-xl font-medium text-cyan-400">Start Your Journey Today</h3>
+                  <h3 className="text-xl font-medium text-cyan-400">
+                    Start Your Journey Today
+                  </h3>
 
-                  <div className="mt-4 flex justify-center gap-4">
+                  <div className="mt-4 flex justify-center  gap-4">
                     <span className="auth-badge">Free</span>
                     <span className="auth-badge">Easy Setup</span>
                     <span className="auth-badge">Private</span>
